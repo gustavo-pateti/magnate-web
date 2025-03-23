@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useWebSocket } from './composables/useWebSocket';
+import HelloWorld from '@components/HelloWorld.vue';
 
 const message = ref('');
 const receivedMessages = ref<string[]>([]);
@@ -24,6 +25,7 @@ const sendMessage = () => {
 
 <template>
   <div>
+    <HelloWorld msg="Hello World!" />
     <input v-model="message" type="text" placeholder="Type a message" />
     <button @click="sendMessage">Send</button>
     <div>Received Messages:</div>
